@@ -1,0 +1,21 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<form (ngSubmit)="onSubmitForm()">
+				<div class="row">
+					<div class="col-md-6">
+						<label for="name">Name</label>
+						<input type="text" name="name" id="name" class="form-control" [(ngModel)]="name" />
+					</div>
+					<div class="col-md-6">
+						<label for="avatar">Avatar</label>
+						<input type="file" id="avatar" name="image-avatar" (change)="fileChangeListener($event)" accept="image/png, image/jpg, image/jpeg" />
+						<img src="{{avatarUrl}}" *ngIf="avatarUrl" alt="avatar" class="avatar">
+					</div>
+				</div>
+			  	<button type="submit" class="btn btn-primary">Submit</button>
+			</form>
+		</div>
+	</div>
+</div>
+
